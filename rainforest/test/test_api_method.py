@@ -1,7 +1,10 @@
 import rainforest
-import mock
 import requests
 import unittest
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 class TestApiMethod(unittest.TestCase):
     method = "get"

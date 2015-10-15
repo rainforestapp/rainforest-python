@@ -17,6 +17,12 @@ os.chdir(os.path.abspath(path))
 
 install_requires = ['requests >= 2.7.0']
 
+# check if mock is present, and install it if needed
+try:
+    from unittest import mock
+except ImportError:
+    install_requires += ['mock >= 1.3.0']
+
 if sys.version_info < (2, 7):
     warnings.warn(
         'Python 2.6 is not supported by Rainforest. '
